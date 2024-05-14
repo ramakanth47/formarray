@@ -1,0 +1,14 @@
+<form action="" [formGroup]="testForm">
+
+  <div formArrayName="mobileNums">
+   
+ <div *ngFor="let m of testForm.controls['mobileNums']['controls'] let i = index">
+  <div class="d-flex">
+  Mobile Number {{i+1}}<input type="text" formControlName="{{i}}" class="form-control m-2 w-50">
+  <button (click)="delete(i)">❌</button>
+  </div>
+</div>
+  </div>
+</form>
+
+<button (click)="Add()">Add</button>
